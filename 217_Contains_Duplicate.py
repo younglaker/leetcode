@@ -16,19 +16,26 @@ Example 3:
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 '''
+
+
 def containsDuplicate(nums):
     list = set()
-    # for i in range(0, len(nums)):
-    #     if  nums[i] in list:
-    #         return True
-    #     else:
-    #         list.add(nums[i])
-    # return False
+
     for n in nums:
         if n in list:
             return n
         else:
             list.add(n)
+
+
+def containsDuplicate2(nums):
+    list = []
+    for i in range(0, len(nums)):
+        if nums[i] in list:
+            return True
+        else:
+            list.add(nums[i])
+    return False
 
 
 a = containsDuplicate([1,2,13,1])
