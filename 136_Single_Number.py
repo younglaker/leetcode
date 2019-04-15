@@ -1,20 +1,3 @@
-'''
-Given a non-empty array of integers, every element appears twice except for one. Find that single one.
-
-Note:
-
-Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
-
-Example 1:
-
-Input: [2,2,1]
-Output: 1
-Example 2:
-
-Input: [4,1,2,1,2]
-Output: 4
-'''
-
 # array
 def singleNumber1(nums):
     list = []
@@ -25,15 +8,15 @@ def singleNumber1(nums):
             list.append(i)
     return list.pop()
 
+
 # hash
 def singleNumber2(nums):
     dict = {}
     for i in nums:
-        if dict.has_key(i):
+        if i in dict:
             dict.pop(i)
         else:
             dict.update({i: 0})
-    print dict
     for key, val in dict.items():
         if val == 0:
             return key
@@ -68,7 +51,21 @@ def singleNumber4(nums):
     return a
 
 
-# print singleNumber1([4,1,2,1,2])
-# print singleNumber2([4,1,2,1,2])
-print singleNumber4([4,1,2,1,2])
-# print singleNumber3([4,1,2,1,2])
+print (singleNumber4([4,1,2,1,2]) )
+
+'''
+Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+Example 1:
+
+Input: [2,2,1]
+Output: 1
+Example 2:
+
+Input: [4,1,2,1,2]
+Output: 4
+'''
